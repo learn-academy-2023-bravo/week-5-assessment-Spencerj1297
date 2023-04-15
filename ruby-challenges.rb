@@ -12,21 +12,32 @@ letter_t = 't'
 
 
 ## Define a new method called word_checker
-## This method will have 2 parameters, one for the array of strings called array, and one called 'string' for the variables storing strings
-## define a new varialbe inside the method called new_array that will store the array with .select  attaced 
+## This method will have 2 parameters, one for the array of strings called array, and one called 'letter' for the variables storing strings
+## define a new varialbe inside the method called new_array that will store the array with .select attached. 
+## .select works similarly to .filter in JavaScript
+## call the value string to help the flow of the code.
+## create an If statement that will act as the logic for the .select.
+## using the string value with .include? attached to check for the letter parameter.
+## return the string 
+## add an else statement with returns nil 
+## Before the last end do a final return of new_array to display all the strings needed. 
 
 def word_checker array, letter
-  new_array = array.map do |string|
-    if value.includes?('string')
+  new_array = array.select do |string|
+    if string.include?(letter)
      string
     else
       nil
     end
   end
-   return new_array
+  return new_array
 end
 
+p word_checker(beverages_array, letter_o)
+p word_checker(beverages_array, letter_t)
 
+# ["coffee", "soda water"]
+# ["tea", "water", "soda water"]
 
 
 # -------------------2) Create a method that takes in a hash and returns one array with all the hash values at their own index and in alphabetical order. No nested arrays. Use the test variable provided.

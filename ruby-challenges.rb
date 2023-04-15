@@ -11,6 +11,24 @@ letter_t = 't'
 # Expected output: ['tea', 'water', 'soda water']
 
 
+## Define a new method called word_checker
+## This method will have 2 parameters, one for the array of strings called array, and one called 'string' for the variables storing strings
+## define a new varialbe inside the method called new_array that will store the array with .select  attaced 
+
+def word_checker array, letter
+  new_array = array.map do |string|
+    if value.includes?('string')
+     string
+    else
+      nil
+    end
+  end
+   return new_array
+end
+
+
+
+
 # -------------------2) Create a method that takes in a hash and returns one array with all the hash values at their own index and in alphabetical order. No nested arrays. Use the test variable provided.
 # HINT: Google 'ruby get rid of nested arrays'
 

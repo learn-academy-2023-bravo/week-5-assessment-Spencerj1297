@@ -82,3 +82,37 @@ const wordChecker = (array, string) => {
     }) 
     return newArray
 }
+
+
+describe("winWinChickenDin", () => {
+  const hand1 = [5, 5, 5, 3, 3]
+  // Expected output: true
+  const hand2 = [5, 5, 3, 3, 4]
+  // Expected output: false
+  const hand3 = [5, 5, 5, 5, 4]
+  // Expected output: false
+  const hand4 = [7, 2, 7, 2, 7]
+  // Expected output: true
+  it('Function that takes in an array of 5 numbers and determines whether or not the array is a "full house". A full house is exactly one pair and one three of a kind.', () => {
+    expect(winWinChickenDin(hand1)).toEqual(true)
+    expect(winWinChickenDin(hand2)).toEqual(false)
+    expect(winWinChickenDin(hand3)).toEqual(false)
+    expect(winWinChickenDin(hand4)).toEqual(true)
+  })
+})
+
+// Expected output: true
+
+// b) Create the function that makes the test pass.
+
+
+const winWinChickenDin = (array) => {
+  const count = {}
+    for(let i = 0; i < array.length; i++){
+      count[array[i]] = count[array[i]] + 1 || 1
+    }
+    const outcome = Object.values(count)
+    return outcome.includes(2) && outcome.includes(3)
+}
+
+
